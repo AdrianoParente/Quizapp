@@ -1,20 +1,32 @@
-body{
-    background-image: url('img/motorcycle-1148963_1280.jpg');
+body {
+    background-image: url("img/motorcycle-1148963_1280.jpg");
 }
 
-.card-main{
+.card-main {
+    position: relative;
     width: 600px;
     height: 500px;
     margin-top: 50px;
     margin-left: 50px;
     border-radius: 15px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.question-header{
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 999;
+}
+
+.question-header {
     width: 500px;
     height: 50px;
     margin-top: 10px;
@@ -26,10 +38,10 @@ body{
     align-items: center;
     color: white;
 }
-.card-sub{
+.card-sub {
     width: 500px;
     height: 50px;
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     color: black;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -38,15 +50,15 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-.card-sub:hover{
-    background-color: rgba(255,255,255,0.8);
+.card-sub:hover {
+    background-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
 }
-.card-sub-right{
+.card-sub-right {
     transform: scale(1.1, 4);
     transition: all ease-in-out 2s;
 }
-.question-footer{
+.question-footer {
     width: 500px;
     height: 50px;
     margin-top: 30px;
@@ -54,23 +66,76 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
+    font-size: 20px;
 }
-#hd-logo{
-    height:  360px;
+#hd-logo {
+    height: 360px;
     width: 80%;
-    background-image: url('img/emblem-2715523_640.png');
+    background-image: url("img/emblem-2715523_640.png");
     background-size: cover;
 }
-#start-button{
-    height:  100px;
+#start-button {
+    height: 100px;
     width: 30%;
-    background-image: url('img/start-2090242_640.jpg');
+    background-image: url("img/start-2090242_640.jpg");
     background-size: cover;
     margin-bottom: 20px;
     border-radius: 75px;
 }
 
-#start-button:hover{
+#start-button:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+#winnerSkull {
+    height: 400px;
+    width: 56%;
+    background-image: url("img/skull-3988270_1920.png");
+    background-size: cover;
+}
+.progress {
+    width: 500px;
+}
+#card-quiz {
+    display: none;
+}
+#endScreen {
+    display: none;
+    color: white;
+    font-size: 20px;
+}
+
+.btn-dark {
+    z-index: 1000;
+}
+@media (max-width: 700px) {
+    .card-main {
+        margin-right: 20px;
+        margin-left: 20px;
+        width: 250px;
+    }
+    #endscreen {
+        text-align: center;
+    }
+    .card-sub,
+    .question-header,
+    .question-footer,
+    .progress {
+        width: 230px;
+    }
+    .question-footer {
+        flex-direction: column;
+    }
+    #winnerSkull {
+        height: 297px;
+        width: 100%;
+    }
+    #start-button {
+        height: 45px;
+    }
+    #hd-logo {
+        height: 195px;
+        width: 100%;
+    }
 }

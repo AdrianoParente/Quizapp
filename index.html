@@ -13,36 +13,23 @@
 </head>
 
 <body onload="init()">
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-text">
-                Motorrad Quizapp
-            </span>
-        </div>
-    </nav>
-
     <div class="card-main" id="card-start">
-        <div id = "hd-logo" >
+        <div id="hd-logo">
 
         </div>
-        <div  id="start-button" onclick="startQuiz()">
-        
-        </div>
+        <div id="start-button" onclick="startQuiz()">
 
+        </div>
     </div>
 
     <div class="card-main" id="card-quiz">
+        <div id="overlay"></div>
         <div class="question-header" id="questionText">
 
         </div>
-
         <div class="card-sub" id="answer_1" onclick="answer('answer_1')">
 
         </div>
-
-
-
-
         <div class="card-sub" id="answer_2" onclick="answer('answer_2')">
 
         </div>
@@ -52,20 +39,26 @@
         <div class="card-sub" id="answer_4" onclick="answer('answer_4')">
 
         </div>
+        <div class="progress">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuemax="100">0%
+            </div>
+        </div>
         <div class="question-footer">
             <span>
                 <b id="questionNumber"></b> von <b id="allQuestions"></b> Fragen
-
             </span>
-
             <button onclick="nextQuestion()" type="button" class="btn btn-dark" id="nextBtn" disabled>Nächste
                 Frage</button>
+        </div>
+    </div>
+    <div class="card-main" id="endScreen">
+        <div id="winnerSkull">
 
         </div>
-
-    </div>
-    <div class ="card-main" id = "endScreen">
-        
+        <div>
+            Du hast <b id="numOfRightAnswers"></b> von <b id="numAnswers"></b> Fragen richtig beantwortet!
+        </div>
+        <button onclick="restart()" type="button" class="btn btn-dark">Neues Spiel</button>
     </div>
 </body>
 
